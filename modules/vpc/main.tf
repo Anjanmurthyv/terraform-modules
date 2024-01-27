@@ -2,8 +2,6 @@ provider "aws" {
   region = var.aws_region
 }
 
-
-
 # Creating a VPC!
 resource "aws_vpc" "test-vpc" {
   
