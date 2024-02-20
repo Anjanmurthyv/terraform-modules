@@ -1,9 +1,11 @@
-# modules/vpc/main.tf
-
 provider "aws" {
   region = var.region
 }
 
+variable "region" {
+  description = "The AWS region"
+  type        = string
+}
 
 variable "vpc_cidr_block" {
   description = "The CIDR block for the VPC"
@@ -22,4 +24,10 @@ resource "aws_vpc" "test-vpc" {
   tags = {
     Name = var.vpc_name
   }
+}
+
+
+output "vpc_id" {
+  description = "The ID of the created VPC"
+  value       = aws_vpc.test-vpc.id
 }
