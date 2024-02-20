@@ -1,5 +1,9 @@
 # modules/vpc/main.tf
 
+provider "aws" {
+  region = var.region
+}
+
 # Define a Terraform module to create a VPC in AWS
 
 variable "vpc_cidr_block" {
